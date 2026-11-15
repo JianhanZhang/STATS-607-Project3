@@ -7,6 +7,9 @@ from src.methods_optimized import ClassicalTetradTestOptimized, GeneralizedTetra
 from src.metrics import compute_rejection_rate
 from tqdm import tqdm
 import time
+from concurrent.futures import ProcessPoolExecutor
+from itertools import repeat
+from pathlib import Path
 
 def run_one_simulation(num_samples, alpha_2, beta_2, delta, seed):
     """
@@ -45,7 +48,7 @@ def run_one_simulation(num_samples, alpha_2, beta_2, delta, seed):
         'generalized_psmd': p_value_generalized_psmd
     }
 
-def run_simulations(num_replications, num_samples_list, parameters_list, alpha, start_seed, raw_path=None):
+def run_simulations(num_replications, num_samples_list, parameters_list, alpha, start_seed, raw_path=None, n_workers=4):
     """
     Run multiple simulation replications.
 
@@ -58,6 +61,7 @@ def run_simulations(num_replications, num_samples_list, parameters_list, alpha, 
     start_seed (int): The random seed for the first replication.
     raw_path (str): The path where the raw results will be saved as a .csv file. If None, the results will not be saved to a file.
     agg_path (str): The path where the aggregated results will be saved as a .csv file. If None, the results will not be saved to a file.
+    n_workers (int): The number of worker processes to use for parallel execution.
 
     Returns:
     pd.DataFrame: Two DataFrames, one containing the raw simulation results and another containing the aggregated rejection rates.
@@ -77,29 +81,37 @@ def run_simulations(num_replications, num_samples_list, parameters_list, alpha, 
         'rejection_decision_generalized_psmd': [], 
         'replication_id': []
     }
-    for num_samples in tqdm(num_samples_list, desc="Sample Sizes"):
-        for parameters in tqdm(parameters_list, desc="Data-generating Mechanisms"):
-            # Run the tests and record the p-values for each simulation replication
-            for i in tqdm(range(num_replications), desc="Simulation Replications"):
-                current_seed = start_seed + i
-                result = run_one_simulation(num_samples=num_samples, 
-                                            alpha_2=parameters[0], 
-                                            beta_2=parameters[1], 
-                                            delta=parameters[2], 
-                                            seed=current_seed)
+
+    with ProcessPoolExecutor(max_workers=n_workers) as executor:
+        for num_samples in tqdm(num_samples_list, desc="Sample Sizes"):
+            for parameters in tqdm(parameters_list, desc="Data-generating Mechanisms"):
+                seeds = range(start_seed, start_seed + num_replications)
+
+                # Run the tests and record the p-values for each simulation replication; parallelized
+                results = executor.map(
+                    run_one_simulation,
+                    repeat(num_samples),
+                    repeat(parameters[0]),
+                    repeat(parameters[1]),
+                    repeat(parameters[2]),
+                    seeds,
+                    chunksize=5
+                )
+
                 # Store the raw results
-                raw_results['num_replications'].append(num_replications)
-                raw_results['num_samples'].append(num_samples)
-                raw_results['alpha_2'].append(parameters[0])
-                raw_results['beta_2'].append(parameters[1])
-                raw_results['delta'].append(parameters[2])
-                raw_results['p_value_classical'].append(result['classical'])
-                raw_results['p_value_generalized_gmm'].append(result['generalized_gmm'])
-                raw_results['p_value_generalized_psmd'].append(result['generalized_psmd'])
-                raw_results['rejection_decision_classical'].append(result['classical'] < alpha)
-                raw_results['rejection_decision_generalized_gmm'].append(result['generalized_gmm'] < alpha)
-                raw_results['rejection_decision_generalized_psmd'].append(result['generalized_psmd'] < alpha)
-                raw_results['replication_id'].append(i + 1)
+                for i, result in enumerate(tqdm(results, total=num_replications, desc="Simulation Replications Results")):
+                    raw_results['num_replications'].append(num_replications)
+                    raw_results['num_samples'].append(num_samples)
+                    raw_results['alpha_2'].append(parameters[0])
+                    raw_results['beta_2'].append(parameters[1])
+                    raw_results['delta'].append(parameters[2])
+                    raw_results['p_value_classical'].append(result['classical'])
+                    raw_results['p_value_generalized_gmm'].append(result['generalized_gmm'])
+                    raw_results['p_value_generalized_psmd'].append(result['generalized_psmd'])
+                    raw_results['rejection_decision_classical'].append(result['classical'] < alpha)
+                    raw_results['rejection_decision_generalized_gmm'].append(result['generalized_gmm'] < alpha)
+                    raw_results['rejection_decision_generalized_psmd'].append(result['generalized_psmd'] < alpha)
+                    raw_results['replication_id'].append(i + 1)
 
     # Save and return the results
     df_raw = pd.DataFrame(raw_results)
@@ -121,25 +133,25 @@ if __name__ == "__main__":
         [0, 0, 0.15], # Setting III(a)
         [0, 0, 0.3] # Setting III(b)
     ]
-    run_simulations(num_replications=1000, num_samples_list=[500, 1000], parameters_list=parameters_list, alpha=0.05, start_seed=1, raw_path='results/raw/raw_results_table2.csv')
+    run_simulations(num_replications=1000, num_samples_list=[500, 1000], parameters_list=parameters_list, alpha=0.05, start_seed=1, raw_path='results/raw/raw_results_table2_optimized.csv')
 
     # Experiment 2: Fix beta_2 = delta = 0, and vary alpha_2
     parameters_list = []
     for alpha_2 in np.arange(0, 1.0, 0.1):
         parameters_list.append([alpha_2, 0, 0])
-    run_simulations(num_replications=100, num_samples_list=[1000], parameters_list=parameters_list, alpha=0.05, start_seed=1, raw_path='results/raw/raw_results_alpha2.csv')
+    run_simulations(num_replications=100, num_samples_list=[1000], parameters_list=parameters_list, alpha=0.05, start_seed=1, raw_path='results/raw/raw_results_alpha2_optimized.csv')
 
     # Experiment 3: Fix alpha_2 = delta = 0, and vary beta_2
     parameters_list = []
     for beta_2 in np.arange(0, 1.0, 0.1):
         parameters_list.append([0, beta_2, 0])
-    run_simulations(num_replications=100, num_samples_list=[1000], parameters_list=parameters_list, alpha=0.05, start_seed=1, raw_path='results/raw/raw_results_beta2.csv')
+    run_simulations(num_replications=100, num_samples_list=[1000], parameters_list=parameters_list, alpha=0.05, start_seed=1, raw_path='results/raw/raw_results_beta2_optimized.csv')
 
     # Experiment 4: Fix alpha_2 = beta_2 = 0, and vary delta
     parameters_list = []
     for delta in np.arange(0, 1.0, 0.1):
         parameters_list.append([0, 0, delta])
-    run_simulations(num_replications=100, num_samples_list=[1000], parameters_list=parameters_list, alpha=0.05, start_seed=1, raw_path='results/raw/raw_results_delta.csv')
+    run_simulations(num_replications=100, num_samples_list=[1000], parameters_list=parameters_list, alpha=0.05, start_seed=1, raw_path='results/raw/raw_results_delta_optimized.csv')
 
     wall_end = time.perf_counter()
     cpu_end = time.process_time()

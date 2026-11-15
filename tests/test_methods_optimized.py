@@ -6,7 +6,7 @@ from src.dgps import generate_data
 from src.methods_optimized import ClassicalTetradTestOptimized, GeneralizedTetradTestGMMOptimized, GeneralizedTetradTestPSMDOptimized
 
 # ---------- TEST THE TEST STATISTIC ----------
-def test_generalized_tetrad_gmm_statistic():
+def test_generalized_tetrad_gmm_statistic_optimized():
     '''Test that generalized tetrad test with GMM gives a finite and nonnegative test statistic.'''
     X, Y, Z, W, U = generate_data(num_samples=100, alpha_2=0, beta_2=0, delta=0)
     test = GeneralizedTetradTestGMMOptimized(X, Y, Z, W)
@@ -15,7 +15,7 @@ def test_generalized_tetrad_gmm_statistic():
     assert np.isfinite(statistic)
     assert statistic >= 0
 
-def test_generalized_tetrad_psmd_statistic():
+def test_generalized_tetrad_psmd_statistic_optimized():
     '''Test that generalized tetrad test with PSMD gives a finite and nonnegative test statistic.'''
     X, Y, Z, W, U = generate_data(num_samples=100, alpha_2=0, beta_2=0, delta=0)
     test = GeneralizedTetradTestPSMDOptimized(X, Y, Z, W)
@@ -25,7 +25,7 @@ def test_generalized_tetrad_psmd_statistic():
     assert statistic >= 0
 
 # ---------- TEST THE P-VALUE ----------
-def test_classical_tetrad_test_p_value_validity():
+def test_classical_tetrad_test_p_value_validity_optimized():
     '''Test that the classical tetrad test gives valid p-values.'''
     X, Y, Z, W, U = generate_data(num_samples=100, alpha_2=0, beta_2=0, delta=0.2)
     test = ClassicalTetradTestOptimized(X, Y, Z, W)
@@ -33,7 +33,7 @@ def test_classical_tetrad_test_p_value_validity():
 
     assert p_value >= 0 and p_value <= 1
 
-def test_classical_tetrad_test_p_value_correctness():
+def test_classical_tetrad_test_p_value_correctness_optimized():
     '''Test that the classical tetrad test gives correct p-values, assuming the test statistic is calculated correctly.'''
     X, Y, Z, W, U = generate_data(num_samples=100, alpha_2=0, beta_2=0, delta=0.2)
     test = ClassicalTetradTestOptimized(X, Y, Z, W)
@@ -42,7 +42,7 @@ def test_classical_tetrad_test_p_value_correctness():
 
     assert np.isclose(p_value, chi2.sf(test_statistic, df=2))
 
-def test_generalized_tetrad_test_gmm_p_value_validity():
+def test_generalized_tetrad_test_gmm_p_value_validity_optimized():
     '''Test that the generalized tetrad test with GMM gives valid p-values.'''
     X, Y, Z, W, U = generate_data(num_samples=100, alpha_2=0, beta_2=0, delta=0.2)
     test = GeneralizedTetradTestGMMOptimized(X, Y, Z, W)
@@ -50,7 +50,7 @@ def test_generalized_tetrad_test_gmm_p_value_validity():
 
     assert p_value >= 0 and p_value <= 1
 
-def test_generalized_tetrad_test_gmm_p_value_correctness():
+def test_generalized_tetrad_test_gmm_p_value_correctness_optimized():
     '''Test that the generalized tetrad test with GMM gives correct p-values, assuming the test statistic is calculated correctly.'''
     X, Y, Z, W, U = generate_data(num_samples=100, alpha_2=0, beta_2=0, delta=0.2)
     test = GeneralizedTetradTestGMMOptimized(X, Y, Z, W)
@@ -59,7 +59,7 @@ def test_generalized_tetrad_test_gmm_p_value_correctness():
 
     assert np.isclose(p_value, chi2.sf(test_statistic, df=1))
 
-def test_generalized_tetrad_test_psmd_p_value_validity():
+def test_generalized_tetrad_test_psmd_p_value_validity_optimized():
     '''Test that the generalized tetrad test with PSMD gives valid p-values.'''
     X, Y, Z, W, U = generate_data(num_samples=100, alpha_2=0, beta_2=0, delta=0.2)
     test = GeneralizedTetradTestPSMDOptimized(X, Y, Z, W)
@@ -67,7 +67,7 @@ def test_generalized_tetrad_test_psmd_p_value_validity():
 
     assert p_value >= 0 and p_value <= 1
 
-def test_generalized_tetrad_test_psmd_p_value_correctness():
+def test_generalized_tetrad_test_psmd_p_value_correctness_optimized():
     '''Test that the generalized tetrad test with PSMD gives correct p-values, assuming the test statistic is calculated correctly.'''
     X, Y, Z, W, U = generate_data(num_samples=100, alpha_2=0, beta_2=0, delta=0.2)
     test = GeneralizedTetradTestPSMDOptimized(X, Y, Z, W)
@@ -77,7 +77,7 @@ def test_generalized_tetrad_test_psmd_p_value_correctness():
     assert np.isclose(p_value, chi2.sf(test_statistic, df=1))
 
 # ---------- TEST THE REJECTION DECISION ----------
-def test_classical_tetrad_test_rejection_decision():
+def test_classical_tetrad_test_rejection_decision_optimized():
     '''Test that the classical tetrad test gives correct rejection decisions, assuming the p-value is calculated correctly.'''
     X, Y, Z, W, U = generate_data(num_samples=100, alpha_2=0, beta_2=0, delta=0.2)
     test = ClassicalTetradTestOptimized(X, Y, Z, W)
@@ -87,7 +87,7 @@ def test_classical_tetrad_test_rejection_decision():
     assert test.reject(alpha=0.05) == (p_value < 0.05)
     assert test.reject(alpha=0.01) == (p_value < 0.01)
 
-def test_generalized_tetrad_test_gmm_rejection_decision():
+def test_generalized_tetrad_test_gmm_rejection_decision_optimized():
     '''Test that the generalized tetrad test with GMM gives correct rejection decisions, assuming the p-value is calculated correctly.'''
     X, Y, Z, W, U = generate_data(num_samples=100, alpha_2=0, beta_2=0, delta=0.2)
     test = GeneralizedTetradTestGMMOptimized(X, Y, Z, W)
@@ -97,7 +97,7 @@ def test_generalized_tetrad_test_gmm_rejection_decision():
     assert test.reject(alpha=0.05) == (p_value < 0.05)
     assert test.reject(alpha=0.01) == (p_value < 0.01)
 
-def test_generalized_tetrad_test_psmd_rejection_decision():
+def test_generalized_tetrad_test_psmd_rejection_decision_optimized():
     '''Test that the generalized tetrad test with PSMD gives correct rejection decisions, assuming the p-value is calculated correctly.'''
     X, Y, Z, W, U = generate_data(num_samples=100, alpha_2=0, beta_2=0, delta=0.2)
     test = GeneralizedTetradTestPSMDOptimized(X, Y, Z, W)

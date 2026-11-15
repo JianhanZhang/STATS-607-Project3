@@ -1,0 +1,658 @@
+Sample size: 1000
+Total runtime: 1.586881 seconds
+
+--- Sorted by total internal time ---
+         2005151 function calls (2005103 primitive calls) in 1.587 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+    20000    0.559    0.000    1.054    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:336(_compute_phi_s)
+        2    0.422    0.211    1.574    0.787 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:383(_compute_sn)
+    80124    0.130    0.000    0.130    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+    40034    0.077    0.000    0.100    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_shape_base_impl.py:607(column_stack)
+    60040    0.067    0.000    0.238    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/_methods.py:115(_mean)
+    20003    0.046    0.000    0.112    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:374(solve)
+    60040    0.029    0.000    0.034    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/_methods.py:73(_count_reduce_items)
+    40000    0.029    0.000    0.037    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numeric.py:170(ones)
+    20004    0.022    0.000    0.022    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:287(estimated_bridge_function)
+    20004    0.014    0.000    0.018    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_twodim_base_impl.py:178(eye)
+    20009    0.013    0.000    0.027    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:201(_commonType)
+   220131    0.012    0.000    0.012    0.000 {built-in method builtins.issubclass}
+    60003    0.011    0.000    0.248    0.000 {method 'mean' of 'numpy.ndarray' objects}
+    20032    0.011    0.000    0.024    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:66(_wrapreduction)
+    80171    0.010    0.000    0.010    0.000 {built-in method numpy.array}
+    20022    0.010    0.000    0.036    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:2342(sum)
+   140264    0.008    0.000    0.008    0.000 {built-in method numpy.asanyarray}
+    40018    0.008    0.000    0.012    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:163(_makearray)
+   100318    0.007    0.000    0.007    0.000 {built-in method builtins.isinstance}
+    40034    0.007    0.000    0.010    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/shape_base.py:206(_arrays_for_stack_dispatcher)
+    80040    0.007    0.000    0.007    0.000 {built-in method builtins.hasattr}
+    40034    0.006    0.000    0.017    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_shape_base_impl.py:603(_column_stack_dispatcher)
+    60027    0.006    0.000    0.008    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:168(isComplexType)
+    80153    0.006    0.000    0.006    0.000 {method 'append' of 'list' objects}
+    40018    0.006    0.000    0.006    0.000 {built-in method numpy.empty}
+    20014    0.005    0.000    0.010    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/_ufunc_config.py:472(__enter__)
+    40022    0.005    0.000    0.007    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:182(_realType)
+    60059    0.004    0.000    0.004    0.000 {built-in method numpy.lib.array_utils.normalize_axis_index}
+        8    0.003    0.000    0.003    0.000 {method 'outer' of 'numpy.ufunc' objects}
+    20014    0.003    0.000    0.003    0.000 {built-in method numpy._core._multiarray_umath._make_extobj}
+    20015    0.003    0.000    0.003    0.000 {built-in method numpy.zeros}
+    20014    0.003    0.000    0.005    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/_ufunc_config.py:488(__exit__)
+    20014    0.002    0.000    0.002    0.000 {method 'reset' of '_contextvars.ContextVar' objects}
+    40054    0.002    0.000    0.002    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/multiarray.py:197(concatenate)
+    20083    0.002    0.000    0.002    0.000 {method 'astype' of 'numpy.ndarray' objects}
+    40014    0.002    0.000    0.002    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/multiarray.py:1088(copyto)
+    20003    0.002    0.000    0.002    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:250(_assert_stacked_square)
+    40093    0.002    0.000    0.002    0.000 {method 'get' of 'dict' objects}
+        3    0.002    0.001    0.005    0.002 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:617(_compute_delta_matrix)
+    20014    0.002    0.000    0.002    0.000 {method 'set' of '_contextvars.ContextVar' objects}
+    40080    0.002    0.000    0.002    0.000 {built-in method builtins.getattr}
+    40105    0.002    0.000    0.002    0.000 {built-in method numpy.asarray}
+    40035    0.002    0.000    0.002    0.000 {built-in method _operator.index}
+    20060    0.002    0.000    0.002    0.000 {method 'items' of 'dict' objects}
+    20017    0.002    0.000    0.002    0.000 {method '__array_wrap__' of 'numpy.ndarray' objects}
+    20022    0.002    0.000    0.002    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:2337(_sum_dispatcher)
+        1    0.001    0.001    0.003    0.003 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:292(_compute_delta_matrix)
+    20014    0.001    0.000    0.001    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/_ufunc_config.py:462(__init__)
+        2    0.001    0.001    0.005    0.003 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:701(_compute_sn)
+    20003    0.001    0.000    0.001    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:370(_solve_dispatcher)
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:2434(lstsq)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:630(_compute_mgtn)
+       10    0.000    0.000    0.001    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_numdiff.py:288(approx_derivative)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:305(_compute_mgtn)
+        2    0.000    0.000    0.001    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:548(_estimate_bridge_function)
+       30    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:262(moment_function)
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/dgps.py:6(generate_data)
+        2    0.000    0.000    0.002    0.001 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_optimize.py:1345(_minimize_bfgs)
+        8    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/polynomial/polynomial.py:1128(polyvander)
+        3    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/stats/_distn_infrastructure.py:2219(sf)
+       10    0.000    0.000    0.001    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_numdiff.py:683(_dense_difference)
+       30    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:272(gmm_objective)
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:1144(bmm_einsum)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:634(einsum_path)
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_function_base_impl.py:2688(cov)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:1666(svd)
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:119(_compute_covariance_of_sample_covariances)
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_stride_tricks_impl.py:447(_broadcast_to)
+       20    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:1546(resize)
+       14    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_dcsrch.py:269(_iterate)
+        3    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/stats/_continuous_distns.py:1658(_sf)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_function_base_impl.py:4923(trapezoid)
+       30    0.000    0.000    0.001    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_lib/_util.py:541(__call__)
+       20    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_numdiff.py:904(__call__)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/function_base.py:27(linspace)
+       17    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numeric.py:1427(normalize_axis_tuple)
+        1    0.000    0.000    1.587    1.587 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/simulation.py:11(run_one_simulation)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:968(_parse_eq_to_batch_matmul)
+       55    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/shape_base.py:19(atleast_1d)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:2170(pinv)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_function_base_impl.py:1414(diff)
+        6    0.000    0.000    0.001    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_dcsrch.py:201(__call__)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_differentiable_functions.py:218(__init__)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:330(_greedy_path)
+       37    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:3737(mean)
+     25/1    0.000    0.000    0.000    0.000 {built-in method _abc._abc_subclasscheck}
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:1242(einsum)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:445(_parse_einsum_input)
+       10    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_numdiff.py:14(_adjust_scheme_to_bounds)
+        3    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/stats/_distn_infrastructure.py:613(argsreduce)
+       28    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:86(_wrapreduction_any_all)
+        2    0.000    0.000    0.002    0.001 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_minimize.py:54(minimize)
+       32    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numerictypes.py:328(isdtype)
+       10    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_lib/_array_api.py:497(xp_result_type)
+        8    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numeric.py:1489(moveaxis)
+       68    0.000    0.000    0.000    0.000 {method 'reshape' of 'numpy.ndarray' objects}
+       10    0.000    0.000    0.001    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_differentiable_functions.py:35(__call__)
+       32    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numerictypes.py:309(_preprocess_dtype)
+       20    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numeric.py:2471(array_equal)
+       16    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_optimize.py:195(vecnorm)
+       10    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_numdiff.py:206(_prepare_bounds)
+      229    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+       14    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:90(_find_contraction)
+        1    0.000    0.000    0.008    0.008 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:749(compute_test_statistic)
+        3    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/stats/_distn_infrastructure.py:1006(_argcheck)
+       20    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_external/array_api_extra/_delegation.py:35(atleast_nd)
+       12    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numeric.py:246(ones_like)
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:602(bridge_function)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:532(_polynomial_derivative_basis)
+       30    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_numdiff.py:694(x_generator2)
+        6    0.000    0.000    0.001    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_linesearch.py:108(scalar_search_wolfe1)
+        1    0.000    0.000    1.578    1.578 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:432(compute_test_statistic)
+        8    0.000    0.000    0.001    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_linesearch.py:94(derphi)
+        3    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/stats/_distn_infrastructure.py:1045(_open_support_mask)
+        2    0.000    0.000    0.002    0.001 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:238(_estimate_bridge_function)
+       40    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_external/array_api_compat/numpy/_aliases.py:97(astype)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_dcsrch.py:502(dcstep)
+       60    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_external/array_api_compat/common/_helpers.py:683(_check_device)
+       30    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:1917(ravel)
+       20    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_external/array_api_compat/numpy/_aliases.py:70(asarray)
+       32    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:48(_wrapfunc)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+       10    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_differentiable_functions.py:391(fun)
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:178(compute_test_statistic)
+        2    0.000    0.000    0.000    0.000 {built-in method numpy.arange}
+        8    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:517(_polynomial_basis)
+        8    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:224(_parse_possible_contraction)
+        6    0.000    0.000    0.001    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_linesearch.py:37(line_search_wolfe1)
+        8    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_linesearch.py:90(phi)
+        6    0.000    0.000    0.001    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_optimize.py:1156(_line_search_wolfe12)
+       12    0.000    0.000    0.001    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_differentiable_functions.py:371(_update_grad)
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:202(compute_p_value)
+       26    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:207(reshape)
+        8    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_differentiable_functions.py:337(_update_x)
+       52    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_function_base_impl.py:936(copy)
+       15    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:2474(any)
+       22    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_differentiable_functions.py:360(_update_fun)
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_function_base_impl.py:451(average)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_differentiable_functions.py:57(__init__)
+        3    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_stride_tricks_impl.py:588(broadcast_arrays)
+       14    0.000    0.000    0.000    0.000 {built-in method builtins.sorted}
+       20    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_external/array_api_compat/common/_helpers.py:149(is_torch_array)
+        9    0.000    0.000    0.000    0.000 {built-in method numpy._core._multiarray_umath._place}
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:88(_compute_covariance_matrix)
+        3    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_stride_tricks_impl.py:520(_broadcast_shape)
+       10    0.000    0.000    0.001    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_differentiable_functions.py:397(grad)
+       10    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:3165(amax)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_optimize.py:204(_prepare_scalar_function)
+       38    0.000    0.000    0.000    0.000 {method 'ravel' of 'numpy.ndarray' objects}
+       36    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:61(_compute_size_by_dict)
+        6    0.000    0.000    0.000    0.000 {built-in method numpy._core._multiarray_umath.c_einsum}
+       32    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numeric.py:1911(isscalar)
+        6    0.000    0.000    0.000    0.000 {built-in method _functools.reduce}
+       34    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numeric.py:1476(<genexpr>)
+       32    0.000    0.000    0.000    0.000 {method 'update' of 'set' objects}
+       30    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_numdiff.py:217(<genexpr>)
+       20    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_lib/_array_api.py:76(_asarray)
+       20    0.000    0.000    0.000    0.000 {method 'all' of 'numpy.ndarray' objects}
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_numdiff.py:93(_eps_for_method)
+        3    0.000    0.000    0.000    0.000 {method 'any' of 'numpy.generic' objects}
+        1    0.000    0.000    1.578    1.578 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:459(compute_p_value)
+       13    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:2586(all)
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:143(_compute_covariance_of_tetrad_differences)
+       23    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/_methods.py:64(_all)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:2615(norm)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numeric.py:97(zeros_like)
+        6    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/getlimits.py:169(__new__)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/_methods.py:96(_clip)
+       24    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_function_base_impl.py:375(iterable)
+       20    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/enum.py:187(__get__)
+        1    0.000    0.000    0.008    0.008 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:776(compute_p_value)
+        3    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:30(_sanity_check)
+        3    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:14(__init__)
+       12    0.000    0.000    0.000    0.000 {built-in method builtins.min}
+       52    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_function_base_impl.py:932(_copy_dispatcher)
+        6    0.000    0.000    0.000    0.000 {built-in method builtins.sum}
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_twodim_base_impl.py:260(diag)
+       10    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_lib/_util.py:575(__init__)
+       55    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/shape_base.py:15(_atleast_1d_dispatcher)
+        6    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_dcsrch.py:174(__init__)
+        8    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:23(_flop_count)
+        2    0.000    0.000    0.000    0.000 {method 'clip' of 'numpy.generic' objects}
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:1083(<genexpr>)
+     25/1    0.000    0.000    0.000    0.000 <frozen abc>:121(__subclasscheck__)
+       18    0.000    0.000    0.000    0.000 {built-in method builtins.max}
+       10    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+       12    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+        3    0.000    0.000    0.000    0.000 {method 'all' of 'numpy.generic' objects}
+       32    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_lib/_array_api_override.py:73(array_namespace)
+       18    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:270(<genexpr>)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:1708(diagonal)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_minimize.py:1134(standardize_constraints)
+        9    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_function_base_impl.py:2112(place)
+       32    0.000    0.000    0.000    0.000 {method 'values' of 'dict' objects}
+       37    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:3732(_mean_dispatcher)
+        6    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:1080(<genexpr>)
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:270(transpose)
+       24    0.000    0.000    0.000    0.000 {built-in method builtins.iter}
+       34    0.000    0.000    0.000    0.000 {built-in method builtins.callable}
+        8    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/polynomial/polyutils.py:703(_as_int)
+       30    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:1913(_ravel_dispatcher)
+        2    0.000    0.000    0.000    0.000 {method 'diagonal' of 'numpy.ndarray' objects}
+       33    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/multiarray.py:751(dot)
+        2    0.000    0.000    0.000    0.000 {method 'sum' of 'numpy.ndarray' objects}
+       12    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:1234(_einsum_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:3334(matmul)
+        2    0.000    0.000    0.000    0.000 <string>:1(<lambda>)
+       14    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+        4    0.000    0.000    0.000    0.000 {method 'replace' of 'str' objects}
+       10    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_lib/_util.py:634(__call__)
+       16    0.000    0.000    0.000    0.000 {method 'pop' of 'list' objects}
+       20    0.000    0.000    0.000    0.000 {built-in method builtins.abs}
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:97(_compute_tetrad_differences)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/shape_base.py:78(atleast_2d)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:2245(clip)
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_stride_tricks_impl.py:474(broadcast_to)
+        6    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_linesearch.py:27(_check_c1_c2)
+       14    0.000    0.000    0.000    0.000 {method 'copy' of 'set' objects}
+        5    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/_methods.py:55(_any)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/cProfile.py:120(__exit__)
+       20    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numeric.py:2452(_array_equal_dispatcher)
+        8    0.000    0.000    0.000    0.000 {method 'count' of 'str' objects}
+       20    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/enum.py:1325(value)
+        2    0.000    0.000    0.000    0.000 {method 'dot' of 'numpy.ndarray' objects}
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numerictypes.py:418(issubdtype)
+        8    0.000    0.000    0.000    0.000 {method 'transpose' of 'numpy.ndarray' objects}
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:288(_update_other_results)
+       26    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:203(_reshape_dispatcher)
+        2    0.000    0.000    0.000    0.000 {built-in method _abc._abc_instancecheck}
+       15    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:2469(_any_dispatcher)
+       10    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_numdiff.py:898(__init__)
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:552(swapaxes)
+       20    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/typing.py:2308(cast)
+       20    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:1542(_resize_dispatcher)
+        3    0.000    0.000    0.000    0.000 {built-in method numpy.promote_types}
+        8    0.000    0.000    0.000    0.000 {method 'setdefault' of 'dict' objects}
+        3    0.000    0.000    0.000    0.000 {method 'squeeze' of 'numpy.ndarray' objects}
+       12    0.000    0.000    0.000    0.000 {method 'keys' of 'dict' objects}
+        8    0.000    0.000    0.000    0.000 {method 'insert' of 'list' objects}
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:1093(<genexpr>)
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:498(__init__)
+       10    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_lib/_util.py:629(__exit__)
+        4    0.000    0.000    0.000    0.000 {method 'swapaxes' of 'numpy.ndarray' objects}
+        2    0.000    0.000    0.000    0.000 <frozen abc>:117(__instancecheck__)
+        8    0.000    0.000    0.000    0.000 {method 'isdisjoint' of 'set' objects}
+        6    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/stats/_distn_infrastructure.py:1018(_get_support)
+        7    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:1090(<genexpr>)
+        2    0.000    0.000    0.000    0.000 {method 'flatten' of 'numpy.ndarray' objects}
+       13    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:2581(_all_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_differentiable_functions.py:20(__init__)
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:238(_assert_2d)
+        8    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_stride_tricks_impl.py:452(<genexpr>)
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:1125(_parse_output_order)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:3520(ndim)
+       14    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/multiarray.py:115(empty_like)
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_stride_tricks_impl.py:25(_maybe_view_as_subclass)
+        4    0.000    0.000    0.000    0.000 {method '__exit__' of 'numpy.nditer' objects}
+        8    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numeric.py:1485(_moveaxis_dispatcher)
+        9    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_function_base_impl.py:2108(_place_dispatcher)
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numerictypes.py:230(issubclass_)
+       11    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/multiarray.py:713(result_type)
+        5    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:1084(<genexpr>)
+        2    0.000    0.000    0.000    0.000 {method 'result_type' of 'numpy._core._multiarray_umath._array_converter' objects}
+       12    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numeric.py:240(_ones_like_dispatcher)
+       10    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:3044(_max_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:1101(<genexpr>)
+        2    0.000    0.000    0.000    0.000 {method 'as_arrays' of 'numpy._core._multiarray_umath._array_converter' objects}
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_optimize.py:161(_check_positive_definite)
+        6    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_lib/_util.py:919(_call_callback_maybe_halt)
+        6    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:1100(<genexpr>)
+        2    0.000    0.000    0.000    0.000 {method 'wrap' of 'numpy._core._multiarray_umath._array_converter' objects}
+        2    0.000    0.000    0.000    0.000 {method 'any' of 'numpy.ndarray' objects}
+       10    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_lib/_util.py:614(__enter__)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_lib/_util.py:536(__init__)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:265(_is_empty_2d)
+        3    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:2122(shape)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_lib/_sparse.py:10(issparse)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_differentiable_functions.py:325(nfev)
+       10    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/multiarray.py:406(where)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/_methods.py:47(_sum)
+        2    0.000    0.000    0.000    0.000 {built-in method __new__ of type object at 0x10195d918}
+        1    0.000    0.000    0.000    0.000 {method 'copy' of 'numpy.ndarray' objects}
+        4    0.000    0.000    0.000    0.000 {method '__enter__' of 'numpy.nditer' objects}
+        6    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:426(<lambda>)
+        4    0.000    0.000    0.000    0.000 {method 'discard' of 'set' objects}
+        2    0.000    0.000    0.000    0.000 {method 'conjugate' of 'numpy.ndarray' objects}
+        5    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:1094(<genexpr>)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:244(_assert_stacked_2d)
+        2    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_lib/_util.py:947(__getattr__)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_optimize.py:176(_check_unknown_options)
+        3    0.000    0.000    0.000    0.000 <string>:2(_parse_args)
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:436(<genexpr>)
+        1    0.000    0.000    0.000    0.000 {method 'upper' of 'str' objects}
+        3    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:2118(_shape_dispatcher)
+        1    0.000    0.000    0.000    0.000 {method 'conj' of 'numpy.ndarray' objects}
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_differentiable_functions.py:329(ngev)
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:2430(_lstsq_dispatcher)
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:548(_swapaxes_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:3516(_ndim_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/function_base.py:22(_linspace_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_function_base_impl.py:1410(_diff_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:2240(_clip_dispatcher)
+        3    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_stride_tricks_impl.py:584(_broadcast_arrays_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_optimize.py:88(_wrap_callback)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:2611(_norm_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_twodim_base_impl.py:256(_diag_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_function_base_impl.py:4919(_trapezoid_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/shape_base.py:74(_atleast_2d_dispatcher)
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_function_base_impl.py:2683(_cov_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_optimize.py:299(hess)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:624(_einsum_path_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numeric.py:91(_zeros_like_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:1704(_diagonal_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:1662(_svd_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:2166(_pinv_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:3330(_matmul_dispatcher)
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_stride_tricks_impl.py:470(_broadcast_to_dispatcher)
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_function_base_impl.py:446(_average_dispatcher)
+
+
+
+--- Sorted by cumulative time ---
+         2005151 function calls (2005103 primitive calls) in 1.587 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    1.587    1.587 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/simulation.py:11(run_one_simulation)
+        1    0.000    0.000    1.578    1.578 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:459(compute_p_value)
+        1    0.000    0.000    1.578    1.578 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:432(compute_test_statistic)
+        2    0.422    0.211    1.574    0.787 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:383(_compute_sn)
+    20000    0.559    0.000    1.054    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:336(_compute_phi_s)
+    60003    0.011    0.000    0.248    0.000 {method 'mean' of 'numpy.ndarray' objects}
+    60040    0.067    0.000    0.238    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/_methods.py:115(_mean)
+    80124    0.130    0.000    0.130    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+    20003    0.046    0.000    0.112    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:374(solve)
+    40034    0.077    0.000    0.100    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_shape_base_impl.py:607(column_stack)
+    40000    0.029    0.000    0.037    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numeric.py:170(ones)
+    20022    0.010    0.000    0.036    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:2342(sum)
+    60040    0.029    0.000    0.034    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/_methods.py:73(_count_reduce_items)
+    20009    0.013    0.000    0.027    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:201(_commonType)
+    20032    0.011    0.000    0.024    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:66(_wrapreduction)
+    20004    0.022    0.000    0.022    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:287(estimated_bridge_function)
+    20004    0.014    0.000    0.018    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_twodim_base_impl.py:178(eye)
+    40034    0.006    0.000    0.017    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_shape_base_impl.py:603(_column_stack_dispatcher)
+    40018    0.008    0.000    0.012    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:163(_makearray)
+   220131    0.012    0.000    0.012    0.000 {built-in method builtins.issubclass}
+    20014    0.005    0.000    0.010    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/_ufunc_config.py:472(__enter__)
+    40034    0.007    0.000    0.010    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/shape_base.py:206(_arrays_for_stack_dispatcher)
+    80171    0.010    0.000    0.010    0.000 {built-in method numpy.array}
+    60027    0.006    0.000    0.008    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:168(isComplexType)
+   140264    0.008    0.000    0.008    0.000 {built-in method numpy.asanyarray}
+        1    0.000    0.000    0.008    0.008 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:776(compute_p_value)
+        1    0.000    0.000    0.008    0.008 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:749(compute_test_statistic)
+   100318    0.007    0.000    0.007    0.000 {built-in method builtins.isinstance}
+    40022    0.005    0.000    0.007    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:182(_realType)
+    80040    0.007    0.000    0.007    0.000 {built-in method builtins.hasattr}
+    80153    0.006    0.000    0.006    0.000 {method 'append' of 'list' objects}
+    40018    0.006    0.000    0.006    0.000 {built-in method numpy.empty}
+        3    0.002    0.001    0.005    0.002 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:617(_compute_delta_matrix)
+    20014    0.003    0.000    0.005    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/_ufunc_config.py:488(__exit__)
+        2    0.001    0.001    0.005    0.003 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:701(_compute_sn)
+    60059    0.004    0.000    0.004    0.000 {built-in method numpy.lib.array_utils.normalize_axis_index}
+        8    0.003    0.000    0.003    0.000 {method 'outer' of 'numpy.ufunc' objects}
+    20014    0.003    0.000    0.003    0.000 {built-in method numpy._core._multiarray_umath._make_extobj}
+    20015    0.003    0.000    0.003    0.000 {built-in method numpy.zeros}
+        1    0.001    0.001    0.003    0.003 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:292(_compute_delta_matrix)
+    20014    0.002    0.000    0.002    0.000 {method 'reset' of '_contextvars.ContextVar' objects}
+    40054    0.002    0.000    0.002    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/multiarray.py:197(concatenate)
+    20083    0.002    0.000    0.002    0.000 {method 'astype' of 'numpy.ndarray' objects}
+    40014    0.002    0.000    0.002    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/multiarray.py:1088(copyto)
+    20003    0.002    0.000    0.002    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:250(_assert_stacked_square)
+    40093    0.002    0.000    0.002    0.000 {method 'get' of 'dict' objects}
+    20014    0.002    0.000    0.002    0.000 {method 'set' of '_contextvars.ContextVar' objects}
+    40080    0.002    0.000    0.002    0.000 {built-in method builtins.getattr}
+    40105    0.002    0.000    0.002    0.000 {built-in method numpy.asarray}
+    40035    0.002    0.000    0.002    0.000 {built-in method _operator.index}
+    20060    0.002    0.000    0.002    0.000 {method 'items' of 'dict' objects}
+    20017    0.002    0.000    0.002    0.000 {method '__array_wrap__' of 'numpy.ndarray' objects}
+        2    0.000    0.000    0.002    0.001 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:238(_estimate_bridge_function)
+        2    0.000    0.000    0.002    0.001 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_minimize.py:54(minimize)
+        2    0.000    0.000    0.002    0.001 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_optimize.py:1345(_minimize_bfgs)
+    20022    0.002    0.000    0.002    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:2337(_sum_dispatcher)
+    20014    0.001    0.000    0.001    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/_ufunc_config.py:462(__init__)
+    20003    0.001    0.000    0.001    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:370(_solve_dispatcher)
+        6    0.000    0.000    0.001    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_optimize.py:1156(_line_search_wolfe12)
+        6    0.000    0.000    0.001    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_linesearch.py:37(line_search_wolfe1)
+        6    0.000    0.000    0.001    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_linesearch.py:108(scalar_search_wolfe1)
+        6    0.000    0.000    0.001    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_dcsrch.py:201(__call__)
+       12    0.000    0.000    0.001    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_differentiable_functions.py:371(_update_grad)
+       10    0.000    0.000    0.001    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_differentiable_functions.py:35(__call__)
+       10    0.000    0.000    0.001    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_numdiff.py:288(approx_derivative)
+        8    0.000    0.000    0.001    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_linesearch.py:94(derphi)
+       10    0.000    0.000    0.001    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_differentiable_functions.py:397(grad)
+        2    0.000    0.000    0.001    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:548(_estimate_bridge_function)
+       10    0.000    0.000    0.001    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_numdiff.py:683(_dense_difference)
+       30    0.000    0.000    0.001    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_lib/_util.py:541(__call__)
+       30    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:272(gmm_objective)
+       20    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_numdiff.py:904(__call__)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_optimize.py:204(_prepare_scalar_function)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_differentiable_functions.py:218(__init__)
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:202(compute_p_value)
+       37    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:3737(mean)
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:2434(lstsq)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:1242(einsum)
+        3    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/stats/_distn_infrastructure.py:2219(sf)
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:178(compute_test_statistic)
+        8    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_linesearch.py:90(phi)
+       10    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_differentiable_functions.py:391(fun)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:630(_compute_mgtn)
+       22    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_differentiable_functions.py:360(_update_fun)
+       30    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:262(moment_function)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:634(einsum_path)
+        8    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:517(_polynomial_basis)
+        8    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/polynomial/polynomial.py:1128(polyvander)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:305(_compute_mgtn)
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:88(_compute_covariance_matrix)
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:1144(bmm_einsum)
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_function_base_impl.py:2688(cov)
+       10    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_numdiff.py:206(_prepare_bounds)
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:602(bridge_function)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:2170(pinv)
+        3    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/stats/_distn_infrastructure.py:613(argsreduce)
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/dgps.py:6(generate_data)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:330(_greedy_path)
+       20    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:1546(resize)
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:119(_compute_covariance_of_sample_covariances)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_function_base_impl.py:4923(trapezoid)
+       14    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_dcsrch.py:269(_iterate)
+        8    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numeric.py:1489(moveaxis)
+       32    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numerictypes.py:328(isdtype)
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_function_base_impl.py:451(average)
+       28    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:86(_wrapreduction_any_all)
+       10    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_numdiff.py:14(_adjust_scheme_to_bounds)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:1666(svd)
+        3    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_stride_tricks_impl.py:588(broadcast_arrays)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:968(_parse_eq_to_batch_matmul)
+       16    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_optimize.py:195(vecnorm)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_differentiable_functions.py:57(__init__)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/function_base.py:27(linspace)
+       15    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:2474(any)
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_stride_tricks_impl.py:447(_broadcast_to)
+       55    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/shape_base.py:19(atleast_1d)
+       10    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_lib/_array_api.py:497(xp_result_type)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:532(_polynomial_derivative_basis)
+       17    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numeric.py:1427(normalize_axis_tuple)
+        8    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_differentiable_functions.py:337(_update_x)
+       20    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numeric.py:2471(array_equal)
+       40    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_external/array_api_compat/numpy/_aliases.py:97(astype)
+        3    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/stats/_continuous_distns.py:1658(_sf)
+       20    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_external/array_api_compat/numpy/_aliases.py:70(asarray)
+       32    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:48(_wrapfunc)
+        8    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:224(_parse_possible_contraction)
+       20    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_external/array_api_extra/_delegation.py:35(atleast_nd)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_lib/_sparse.py:10(issparse)
+        2    0.000    0.000    0.000    0.000 <frozen abc>:117(__instancecheck__)
+       32    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numerictypes.py:309(_preprocess_dtype)
+       26    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:207(reshape)
+        2    0.000    0.000    0.000    0.000 {built-in method _abc._abc_instancecheck}
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:445(_parse_einsum_input)
+     25/1    0.000    0.000    0.000    0.000 <frozen abc>:121(__subclasscheck__)
+     25/1    0.000    0.000    0.000    0.000 {built-in method _abc._abc_subclasscheck}
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_function_base_impl.py:1414(diff)
+       30    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_numdiff.py:694(x_generator2)
+       13    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:2586(all)
+       10    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:3165(amax)
+       14    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:90(_find_contraction)
+        3    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/stats/_distn_infrastructure.py:1045(_open_support_mask)
+       68    0.000    0.000    0.000    0.000 {method 'reshape' of 'numpy.ndarray' objects}
+       30    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:1917(ravel)
+       52    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_function_base_impl.py:936(copy)
+       12    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numeric.py:246(ones_like)
+      229    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        3    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/stats/_distn_infrastructure.py:1006(_argcheck)
+       60    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_external/array_api_compat/common/_helpers.py:683(_check_device)
+       20    0.000    0.000    0.000    0.000 {method 'all' of 'numpy.ndarray' objects}
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_dcsrch.py:502(dcstep)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/cProfile.py:120(__exit__)
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_stride_tricks_impl.py:474(broadcast_to)
+       23    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/_methods.py:64(_all)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:2245(clip)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        2    0.000    0.000    0.000    0.000 {built-in method numpy.arange}
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_numdiff.py:93(_eps_for_method)
+        9    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_function_base_impl.py:2112(place)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_twodim_base_impl.py:260(diag)
+        3    0.000    0.000    0.000    0.000 {method 'any' of 'numpy.generic' objects}
+        3    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:14(__init__)
+       30    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_numdiff.py:217(<genexpr>)
+       20    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_external/array_api_compat/common/_helpers.py:149(is_torch_array)
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:270(transpose)
+        2    0.000    0.000    0.000    0.000 {method 'clip' of 'numpy.generic' objects}
+        6    0.000    0.000    0.000    0.000 {built-in method builtins.sum}
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:2615(norm)
+       32    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numeric.py:1911(isscalar)
+       14    0.000    0.000    0.000    0.000 {built-in method builtins.sorted}
+       34    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numeric.py:1476(<genexpr>)
+        9    0.000    0.000    0.000    0.000 {built-in method numpy._core._multiarray_umath._place}
+        2    0.000    0.000    0.000    0.000 {method 'sum' of 'numpy.ndarray' objects}
+       20    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_lib/_array_api.py:76(_asarray)
+        3    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_stride_tricks_impl.py:520(_broadcast_shape)
+        6    0.000    0.000    0.000    0.000 {built-in method _functools.reduce}
+       24    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_function_base_impl.py:375(iterable)
+       38    0.000    0.000    0.000    0.000 {method 'ravel' of 'numpy.ndarray' objects}
+       36    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:61(_compute_size_by_dict)
+        6    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/getlimits.py:169(__new__)
+       20    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/enum.py:187(__get__)
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:1083(<genexpr>)
+        6    0.000    0.000    0.000    0.000 {built-in method numpy._core._multiarray_umath.c_einsum}
+        8    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:23(_flop_count)
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:1093(<genexpr>)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:1708(diagonal)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numeric.py:97(zeros_like)
+        3    0.000    0.000    0.000    0.000 {method 'all' of 'numpy.generic' objects}
+       32    0.000    0.000    0.000    0.000 {method 'update' of 'set' objects}
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:552(swapaxes)
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:143(_compute_covariance_of_tetrad_differences)
+        5    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/_methods.py:55(_any)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/_methods.py:47(_sum)
+        3    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:30(_sanity_check)
+       12    0.000    0.000    0.000    0.000 {built-in method builtins.min}
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/_methods.py:96(_clip)
+       18    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:270(<genexpr>)
+       10    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_lib/_util.py:575(__init__)
+       52    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_function_base_impl.py:932(_copy_dispatcher)
+       55    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/shape_base.py:15(_atleast_1d_dispatcher)
+        6    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_dcsrch.py:174(__init__)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numerictypes.py:418(issubdtype)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/shape_base.py:78(atleast_2d)
+       18    0.000    0.000    0.000    0.000 {built-in method builtins.max}
+        8    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/polynomial/polyutils.py:703(_as_int)
+       10    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:97(_compute_tetrad_differences)
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/src/methods.py:498(__init__)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_minimize.py:1134(standardize_constraints)
+       12    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+       32    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_lib/_array_api_override.py:73(array_namespace)
+        6    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:1080(<genexpr>)
+        2    0.000    0.000    0.000    0.000 <string>:1(<lambda>)
+       32    0.000    0.000    0.000    0.000 {method 'values' of 'dict' objects}
+       37    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:3732(_mean_dispatcher)
+       24    0.000    0.000    0.000    0.000 {built-in method builtins.iter}
+       34    0.000    0.000    0.000    0.000 {built-in method builtins.callable}
+       30    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:1913(_ravel_dispatcher)
+        2    0.000    0.000    0.000    0.000 {method 'diagonal' of 'numpy.ndarray' objects}
+       33    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/multiarray.py:751(dot)
+       12    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:1234(_einsum_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:3334(matmul)
+       14    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+        4    0.000    0.000    0.000    0.000 {method 'replace' of 'str' objects}
+       10    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_lib/_util.py:634(__call__)
+       16    0.000    0.000    0.000    0.000 {method 'pop' of 'list' objects}
+       20    0.000    0.000    0.000    0.000 {built-in method builtins.abs}
+        6    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_linesearch.py:27(_check_c1_c2)
+       14    0.000    0.000    0.000    0.000 {method 'copy' of 'set' objects}
+       20    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numeric.py:2452(_array_equal_dispatcher)
+        8    0.000    0.000    0.000    0.000 {method 'count' of 'str' objects}
+       20    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/enum.py:1325(value)
+        2    0.000    0.000    0.000    0.000 {method 'dot' of 'numpy.ndarray' objects}
+        2    0.000    0.000    0.000    0.000 {method 'any' of 'numpy.ndarray' objects}
+        8    0.000    0.000    0.000    0.000 {method 'transpose' of 'numpy.ndarray' objects}
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:288(_update_other_results)
+       26    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:203(_reshape_dispatcher)
+       15    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:2469(_any_dispatcher)
+       10    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_numdiff.py:898(__init__)
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numerictypes.py:230(issubclass_)
+       20    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/typing.py:2308(cast)
+       20    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:1542(_resize_dispatcher)
+        3    0.000    0.000    0.000    0.000 {built-in method numpy.promote_types}
+        8    0.000    0.000    0.000    0.000 {method 'setdefault' of 'dict' objects}
+        3    0.000    0.000    0.000    0.000 {method 'squeeze' of 'numpy.ndarray' objects}
+       12    0.000    0.000    0.000    0.000 {method 'keys' of 'dict' objects}
+        8    0.000    0.000    0.000    0.000 {method 'insert' of 'list' objects}
+        7    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:1090(<genexpr>)
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:1125(_parse_output_order)
+       10    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_lib/_util.py:629(__exit__)
+        4    0.000    0.000    0.000    0.000 {method 'swapaxes' of 'numpy.ndarray' objects}
+        8    0.000    0.000    0.000    0.000 {method 'isdisjoint' of 'set' objects}
+        6    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/stats/_distn_infrastructure.py:1018(_get_support)
+        2    0.000    0.000    0.000    0.000 {method 'flatten' of 'numpy.ndarray' objects}
+        6    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:1100(<genexpr>)
+       13    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:2581(_all_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_differentiable_functions.py:20(__init__)
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:238(_assert_2d)
+        8    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_stride_tricks_impl.py:452(<genexpr>)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:3520(ndim)
+       14    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/multiarray.py:115(empty_like)
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_stride_tricks_impl.py:25(_maybe_view_as_subclass)
+        4    0.000    0.000    0.000    0.000 {method '__exit__' of 'numpy.nditer' objects}
+        8    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numeric.py:1485(_moveaxis_dispatcher)
+        9    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_function_base_impl.py:2108(_place_dispatcher)
+       11    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/multiarray.py:713(result_type)
+        5    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:1084(<genexpr>)
+        2    0.000    0.000    0.000    0.000 {method 'result_type' of 'numpy._core._multiarray_umath._array_converter' objects}
+       12    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numeric.py:240(_ones_like_dispatcher)
+       10    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:3044(_max_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:1101(<genexpr>)
+        2    0.000    0.000    0.000    0.000 {method 'as_arrays' of 'numpy._core._multiarray_umath._array_converter' objects}
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_optimize.py:161(_check_positive_definite)
+        6    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_lib/_util.py:919(_call_callback_maybe_halt)
+        2    0.000    0.000    0.000    0.000 {method 'wrap' of 'numpy._core._multiarray_umath._array_converter' objects}
+       10    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_lib/_util.py:614(__enter__)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_lib/_util.py:536(__init__)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:265(_is_empty_2d)
+        3    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:2122(shape)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_differentiable_functions.py:325(nfev)
+       10    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/multiarray.py:406(where)
+        2    0.000    0.000    0.000    0.000 {built-in method __new__ of type object at 0x10195d918}
+        1    0.000    0.000    0.000    0.000 {method 'copy' of 'numpy.ndarray' objects}
+        4    0.000    0.000    0.000    0.000 {method '__enter__' of 'numpy.nditer' objects}
+        6    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:426(<lambda>)
+        4    0.000    0.000    0.000    0.000 {method 'discard' of 'set' objects}
+        2    0.000    0.000    0.000    0.000 {method 'conjugate' of 'numpy.ndarray' objects}
+        5    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:1094(<genexpr>)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:244(_assert_stacked_2d)
+        2    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/_lib/_util.py:947(__getattr__)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_optimize.py:176(_check_unknown_options)
+        3    0.000    0.000    0.000    0.000 <string>:2(_parse_args)
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:436(<genexpr>)
+        1    0.000    0.000    0.000    0.000 {method 'upper' of 'str' objects}
+        3    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:2118(_shape_dispatcher)
+        1    0.000    0.000    0.000    0.000 {method 'conj' of 'numpy.ndarray' objects}
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_differentiable_functions.py:329(ngev)
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:2430(_lstsq_dispatcher)
+        4    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:548(_swapaxes_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:3516(_ndim_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/function_base.py:22(_linspace_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_function_base_impl.py:1410(_diff_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:2240(_clip_dispatcher)
+        3    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_stride_tricks_impl.py:584(_broadcast_arrays_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_optimize.py:88(_wrap_callback)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:2611(_norm_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_twodim_base_impl.py:256(_diag_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_function_base_impl.py:4919(_trapezoid_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/shape_base.py:74(_atleast_2d_dispatcher)
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_function_base_impl.py:2683(_cov_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/scipy/optimize/_optimize.py:299(hess)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/einsumfunc.py:624(_einsum_path_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/numeric.py:91(_zeros_like_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/_core/fromnumeric.py:1704(_diagonal_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:1662(_svd_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:2166(_pinv_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/linalg/_linalg.py:3330(_matmul_dispatcher)
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_stride_tricks_impl.py:470(_broadcast_to_dispatcher)
+        1    0.000    0.000    0.000    0.000 /Users/jianhanz/Documents/STATS 607/project3/STATS-607-Project3/.venv/lib/python3.14/site-packages/numpy/lib/_function_base_impl.py:446(_average_dispatcher)
+
+

@@ -1,6 +1,7 @@
 '''Implement the three methods: classical tetrad test, generalized tetrad test with GMM, and generalized tetrad test with PSMD.'''
 
 from abc import ABC, abstractmethod
+from unittest import result
 import numpy as np
 import pandas as pd
 from scipy.stats import chi2
@@ -289,25 +290,44 @@ class GeneralizedTetradTestGMMOptimized(TetradTestOptimized):
 
         return estimated_bridge_function
 
-    def _compute_delta_matrix(self):
+    def _compute_delta_matmul(self, v):
         '''
-        Compute the delta matrix as defined in equation (11) in the generalized tetrad paper.
+        Compute the matrix product of the delta matrix with some vector v, which is used in the computation of S_n.
+
+        Parameters:
+        v (np.ndarray): The vector to multiply with the delta matrix.
 
         Returns:
-        np.ndarray: The computed delta matrix.
+        np.ndarray: The computed matrix product of the delta matrix with the vector v.
         '''
-        abs_diff_matrix = np.abs(np.subtract.outer(self.X, self.X))
-        term_1 = np.add.outer(np.sum(abs_diff_matrix, axis=0), np.sum(abs_diff_matrix, axis=1)) / self.N
-        term_2 = np.sum(abs_diff_matrix) / (self.N)**2
 
-        return abs_diff_matrix - term_1 + term_2
+        # Sort X while also storing the original unsorted ordering
+        order = np.argsort(self.X)
+        X_sorted = self.X[order]
 
-    def _compute_mgtn(self, delta_matrix, bridge_function, bridge_function_type):
+        # Rearrange v to match the sorted order of X
+        v_sorted = v[order]
+
+        # Find cumulative sums
+        P = np.cumsum(v_sorted)
+        Q = np.cumsum(X_sorted * v_sorted)
+
+        # Compute the result of the product
+        result_sorted = (X_sorted * (2 * P - P[-1]) + Q[-1] - 2 * Q)
+
+        # Restore the original order
+        result = np.zeros_like(result_sorted)
+        result[order] = result_sorted
+
+        return result
+
+        
+
+    def _compute_mgtn(self, bridge_function, bridge_function_type):
         '''
         Compute the mgtn vector as defined in equation (12) in the generalized tetrad paper.
 
         Parameters:
-        delta_matrix (np.ndarray): The computed delta matrix.
         bridge_function (callable): The estimated bridge function.
         bridge_function_type (str): The type of bridge function to be used. If "h", then the Y-W bridge function is used; 
             if "g", then the Y-Z bridge function is used.
@@ -329,7 +349,9 @@ class GeneralizedTetradTestGMMOptimized(TetradTestOptimized):
         centered_residuals = residuals - np.mean(residuals)
 
         # Compute the quadratic form inside the square root of MGT_n
-        quadratic_form = (centered_residuals / self.N).T @ delta_matrix @ (centered_residuals / self.N)
+        v = centered_residuals / self.N
+        delta_matmul = self._compute_delta_matmul(v)
+        quadratic_form = v.T @ delta_matmul
 
         return np.sqrt(-quadratic_form)
 
@@ -438,12 +460,9 @@ class GeneralizedTetradTestGMMOptimized(TetradTestOptimized):
         h_hat = self._estimate_bridge_function(bridge_function_type="h")
         g_hat = self._estimate_bridge_function(bridge_function_type="g")
 
-        # Compute the delta matrix
-        delta_matrix = self._compute_delta_matrix()
-
        # Compute MGT_n for both bridge functions
-        mgtn_h = self._compute_mgtn(delta_matrix, h_hat, bridge_function_type="h")
-        mgtn_g = self._compute_mgtn(delta_matrix, g_hat, bridge_function_type="g")
+        mgtn_h = self._compute_mgtn(h_hat, bridge_function_type="h")
+        mgtn_g = self._compute_mgtn(g_hat, bridge_function_type="g")
 
         # Compute S_n for both bridge functions
         sn_h = self._compute_sn(h_hat, bridge_function_type="h")
@@ -625,12 +644,42 @@ class GeneralizedTetradTestPSMDOptimized(TetradTestOptimized):
 
         return abs_diff_matrix - term_1 + term_2
 
-    def _compute_mgtn(self, delta_matrix, bridge_function, bridge_function_type):
+    def _compute_delta_matmul(self, v):
+        '''
+        Compute the matrix product of the delta matrix with some vector v, which is used in the computation of S_n.
+
+        Parameters:
+        v (np.ndarray): The vector to multiply with the delta matrix.
+
+        Returns:
+        np.ndarray: The computed matrix product of the delta matrix with the vector v.
+        '''
+
+        # Sort X while also storing the original unsorted ordering
+        order = np.argsort(self.X)
+        X_sorted = self.X[order]
+
+        # Rearrange v to match the sorted order of X
+        v_sorted = v[order]
+
+        # Find cumulative sums
+        P = np.cumsum(v_sorted)
+        Q = np.cumsum(X_sorted * v_sorted)
+
+        # Compute the result of the product
+        result_sorted = (X_sorted * (2 * P - P[-1]) + Q[-1] - 2 * Q)
+
+        # Restore the original order
+        result = np.zeros_like(result_sorted)
+        result[order] = result_sorted
+
+        return result      
+
+    def _compute_mgtn(self, bridge_function, bridge_function_type):
         '''
         Compute the mgtn vector as defined in equation (12) in the generalized tetrad paper.
 
         Parameters:
-        delta_matrix (np.ndarray): The computed delta matrix.
         bridge_function (callable): The estimated bridge function.
         bridge_function_type (str): The type of bridge function to be used. If "h", then the Y-W bridge function is used; 
             if "g", then the Y-Z bridge function is used.
@@ -652,49 +701,11 @@ class GeneralizedTetradTestPSMDOptimized(TetradTestOptimized):
         centered_residuals = residuals - np.mean(residuals)
 
         # Compute the quadratic form inside the square root of MGT_n
-        quadratic_form = (centered_residuals / self.N).T @ delta_matrix @ (centered_residuals / self.N)
+        v = centered_residuals / self.N
+        delta_matmul = self._compute_delta_matmul(v)
+        quadratic_form = v.T @ delta_matmul
 
         return np.sqrt(-quadratic_form)
-
-    def _compute_phi_s(self, s, bridge_function, bridge_function_type):
-        '''
-        Compute the PSMD correction term for S_n at a specified frequency s.
-
-        Parameters:
-        s (float): Real frequency used in the complex exponential exp(1j*s*X).
-        bridge_function (callable): Fitted bridge function taking proxy values as
-            input and returning its estimated values.
-        bridge_function_type (str): "h" for the Y-W bridge or "g" for the Y-Z bridge.
-
-        Returns:
-        np.ndarray: Complex-valued PSMD influence-function correction
-            phi_hat_s(O_j) for each observation, with shape (N,).
-
-        Raises:
-        ValueError: If bridge_function_type is neither "h" nor "g".
-        RuntimeError: If the requested bridge function has not yet been estimated.
-        '''
-        if bridge_function_type not in ("h", "g"):
-            raise ValueError("bridge_function_type must be 'h' or 'g'.")
-        if bridge_function_type not in self._psmd_models:
-            raise RuntimeError("Estimate the bridge before computing phi_s.")
-
-        fit = self._psmd_models[bridge_function_type]
-        proxy = self.W if bridge_function_type == "h" else self.Z
-        residuals = self.Y - bridge_function(proxy)
-
-        xi = fit["xi"]
-        predicted_xi = fit["predicted_xi"]
-        D_hat_inverse = fit["D_hat_inverse"]
-
-        exp_values = np.exp(1j * s * self.X)
-        # Gateaux derivative of Lambda_s at h in the sieve directions xi.
-        d_lambda = -(xi.T @ exp_values / self.N
-                     - xi.mean(axis=0) * exp_values.mean())
-
-        # Ehat[v*(proxy) | instrument] for each observation.
-        conditional_v = predicted_xi @ (D_hat_inverse @ d_lambda)
-        return residuals * conditional_v
 
     def _compute_sn(self, bridge_function, bridge_function_type, s_grid=None):
         '''
@@ -755,12 +766,9 @@ class GeneralizedTetradTestPSMDOptimized(TetradTestOptimized):
         h_hat = self._estimate_bridge_function(bridge_function_type="h")
         g_hat = self._estimate_bridge_function(bridge_function_type="g")
 
-        # Compute the delta matrix
-        delta_matrix = self._compute_delta_matrix()
-
         # Compute MGT_n for both bridge functions
-        mgtn_h = self._compute_mgtn(delta_matrix, h_hat, bridge_function_type="h")
-        mgtn_g = self._compute_mgtn(delta_matrix, g_hat, bridge_function_type="g")
+        mgtn_h = self._compute_mgtn(h_hat, bridge_function_type="h")
+        mgtn_g = self._compute_mgtn(g_hat, bridge_function_type="g")
 
         # Compute S_n for both bridge functions
         sn_h = self._compute_sn(h_hat, bridge_function_type="h")

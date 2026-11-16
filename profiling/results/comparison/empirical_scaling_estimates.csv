@@ -1,0 +1,6 @@
+figure,implementation,x_parameter,n_points,empirical_exponent,power_law_scale,log_log_r_squared
+runtime_vs_sample_size,Original,num_samples,5,0.5770679672876753,0.02590367411418723,0.9700962060536747
+runtime_vs_sample_size,Optimized,num_samples,5,1.028556620838711,0.0002763424655510506,0.9997902297513541
+runtime_vs_replications,Original sequential,num_replications,5,1.0009394473507514,0.4124757721554861,0.9999974331696182
+runtime_vs_replications,Optimized sequential,num_replications,5,0.9959640313565744,0.03193873974324776,0.999990269479778
+runtime_vs_replications,Optimized parallel,num_replications,5,0.2840855232591922,0.5159577725009518,0.9724869971670527

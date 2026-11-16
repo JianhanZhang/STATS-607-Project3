@@ -1,6 +1,6 @@
 from cProfile import Profile
 from pstats import Stats, SortKey
-from src.simulation_optimized import run_one_simulation, run_simulations
+from src.simulation_optimized import run_one_simulation
 
 with Profile() as profile:
     run_one_simulation(num_samples=10000, alpha_2=0.1, beta_2=0.1, delta=0.1, seed=607)

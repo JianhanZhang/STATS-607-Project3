@@ -2,7 +2,7 @@ PYTHON ?= python3
 RAW_DIR := results/raw
 FIG_DIR := results/figures
 
-.PHONY: all simulate analyze figures test clean
+.PHONY: all simulate analyze figures test clean profile complexity benchmark parallel stability-check
 
 all:
 	$(MAKE) simulate

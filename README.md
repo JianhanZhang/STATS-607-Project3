@@ -1,10 +1,12 @@
-# STATS-607-Project2
+# STATS-607-Project3
 
 ## Project Description
 
 This repository reproduces the simulation study presented in Section 5 of the paper "A generalized tetrad constraint for testing conditional independence given a latent variable" [2]. The full paper can be found [here](https://arxiv.org/abs/2504.14173), and details about simulation objectives and settings implemented in this repository can be found in `ADEMP.md`.
 
-The tetrad constraint is commonly used to test whether a collection of four variables are mutually independent conditional on an shared unobserved latent common cause. However, the classical tetrad test, proposed by [1], is only guaranteed to work when the underlying structural equation model is linear. The generalized tetrad constraint paper proposes a generalization of the classical tetrad test that is able to test the conditional independence in possibly nonlinear structural equation models.
+The tetrad constraint is commonly used to test whether a collection of four variables are mutually independent conditional on a shared unobserved latent common cause. However, the classical tetrad test, proposed by [1], is only guaranteed to work when the underlying structural equation model is linear. The generalized tetrad constraint paper proposes a generalization of the classical tetrad test that is able to test the conditional independence in possibly nonlinear structural equation models.
+
+The code in this repository is an optimized version of the code for Project 2.
 
 ## Setup Instructions
 
@@ -13,8 +15,8 @@ This project was developed using Python 3.14.7.
 To set up the project, first clone the repository and move into the project directory.
 
 ```bash
-git clone https://github.com/JianhanZhang/STATS-607-Project2.git
-cd STATS-607-Project2
+git clone https://github.com/JianhanZhang/STATS-607-Project3.git
+cd STATS-607-Project3
 ```
 
 Once in the project directory, run
@@ -87,9 +89,78 @@ make all
 make clean
 ```
 
+## Profiling the Code
+
+The following command runs profiling on a representative single simulation run
+
+```bash
+make profile
+```
+
+Running the above command should generate the following files:
+
+- `profiling/results/original/profiling_bottleneck_original.txt`: profiling results for the original code.
+- `profiling/results/optimized/profiling_bottleneck_optimized.txt`: profiling results for the optimized code.
+
+The following command runs a computational complexity analysis of runtime vs sample size on a representative single simulation run
+
+```bash
+make complexity
+```
+
+Running the above command should generate the following files:
+
+- `profiling/results/original/complexity_overall_raw_timings_original.csv`: raw results generated while running the complexity analysis on the original code.
+- `profiling/results/original/complexity_overall_summary_original.csv`: Summary table of results of the complexity analysis for the original code.
+- `profiling/results/original/complexity_overall_plot_original.png`: Summary plot of the results of the complexity analysis for the original code, with a regression line included.
+- `profiling/results/optimized/complexity_overall_raw_timings_optimized.csv`: raw results generated while running the complexity analysis on the optimized code.
+- `profiling/results/optimized/complexity_overall_summary_optimized.csv`: Summary table of results of the complexity analysis for the optimized code.
+- `profiling/results/optimized/complexity_overall_plot_optimized.png`: Summary plot of the results of the complexity analysis for the optimized code, with a regression line included.
+
+The following command runs a runtime comparison between the original code and optimized code.
+
+```bash
+make benchmark
+```
+
+Running the above command should generate the following files:
+
+- `profiling/results/comparison/profiling_single_rep_vs_sample_size.csv`: raw results comparing runtime of a single simulation run vs sample size.
+- `profiling/results/comparison/runtime_vs_sample_size.png`: plots comparing runtime of a single simulation run vs sample size, with a regression line; in `.png` format.
+- `profiling/results/comparison/runtime_vs_sample_size.pdf`: plots comparing runtime of a single simulation run vs sample size, with a regression line; in `.pdf` format.
+- `profiling/results/comparison/profiling_multiple_reps_vs_replication_count.csv`: raw results comparing runtime of a multiple simulation replications vs replication count.
+- `profiling/results/comparison/runtime_vs_replications.png`: plots comparing runtime of a multiple simulation replications vs replication count, with a regression line; in `.png` format.
+- `profiling/results/comparison/runtime_vs_replications.pdf`: plots comparing runtime of a multiple simulation replications vs replication count, with a regression line; in `.pdf` format.
+
+The following command runs the full set of simulations using the optimized code and parallelization
+
+```bash
+make parallel
+```
+
+Running the above command should generate the following files:
+
+- `results/raw/raw_results_table2_optimized.csv`
+- `results/raw/raw_results_alpha2_optimized.csv`
+- `results/raw/raw_results_beta2_optimized.csv`
+- `results/raw/raw_results_delta_optimized.csv`
+
+The following command runs a check for potential signs of numerical instability
+
+```bash
+make stability-check
+```
+
+Running the above command should generate the following files:
+
+- `profiling/results/original/stability_detailed_original.csv`
+- `profiling/results/original/stability_summary_original.csv`
+- `profiling/results/optimized/stability_detailed_optimized.csv`
+- `profiling/results/optimized/stability_summary_optimized.csv`
+
 ## Estimated Runtime
 
-An estimated runtime of the full simulation is 14887 seconds (approximately 4 hours). Please note that the actual runtime should depend on the specific computing environment.
+An estimated runtime of the full simulation using the original code is 14887 seconds (approximately 4 hours). Please note that the actual runtime should depend on the specific computing environment.
 
 ## Summary of Key Findings
 

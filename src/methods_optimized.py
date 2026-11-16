@@ -292,13 +292,13 @@ class GeneralizedTetradTestGMMOptimized(TetradTestOptimized):
 
     def _compute_delta_matmul(self, v):
         '''
-        Compute the matrix product of the delta matrix with some vector v, which is used in the computation of S_n.
+        Compute D @ v efficiently, where D[i, j] = abs(X[i] - X[j])
 
         Parameters:
-        v (np.ndarray): The vector to multiply with the delta matrix.
+        v (np.ndarray): The vector to multiply with the D matrix.
 
         Returns:
-        np.ndarray: The computed matrix product of the delta matrix with the vector v.
+        np.ndarray: The computed matrix product of the D matrix with the vector v.
         '''
 
         # Sort X while also storing the original unsorted ordering
@@ -646,13 +646,13 @@ class GeneralizedTetradTestPSMDOptimized(TetradTestOptimized):
 
     def _compute_delta_matmul(self, v):
         '''
-        Compute the matrix product of the delta matrix with some vector v, which is used in the computation of S_n.
+        Compute D @ v efficiently, where D[i, j] = abs(X[i] - X[j])
 
         Parameters:
-        v (np.ndarray): The vector to multiply with the delta matrix.
+        v (np.ndarray): The vector to multiply with the D matrix.
 
         Returns:
-        np.ndarray: The computed matrix product of the delta matrix with the vector v.
+        np.ndarray: The computed matrix product of the D matrix with the vector v.
         '''
 
         # Sort X while also storing the original unsorted ordering

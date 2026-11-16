@@ -1,19 +1,19 @@
 # Optimization Documentation for STATS 607 Project 3
 
-In this documentation, we first introduce the optimization made to the original Project 2 code. Then we present evidence of performance gain from the optimization. We end the document with a discussion of lessons learned.
+In this documentation, we first introduce the optimization made to the original Project 2 code. Then we present evidence of performance gains from the optimization. We end the document with a discussion of the lessons learned.
 
 ## Optimization 1: Vectorization of `_compute_sn()`
 
 ### Problem identified
 
-As discussed in `BASELINE.md`, baseline profiling revealed that `_compute_sn()` in `GeneralizedTetradTestGMM` has a high per-call runtime. This is probably because `_compute_phi_s()` is called repeatedly (for a total of 20000 times) in `_compute_sn()`. Looking more closely, there seems to be two major problems with `_compute_sn()` and `_compute_phi_s()` in `GeneralizedTetradTestGMM`:
+As discussed in `BASELINE.md`, baseline profiling revealed that `_compute_sn()` in `GeneralizedTetradTestGMM` has a high per-call runtime. This is likely partly because `_compute_phi_s()` is called repeatedly (for a total of $20000$ times) in `_compute_sn()`. Looking more closely, there seems to be two major problems with `_compute_sn()` and `_compute_phi_s()` in `GeneralizedTetradTestGMM`:
 
-1. In `_compute_sn()`, $S_n$ is calculated using numerical integration over a grid of intervals (which contains $10000$ points in our simulation setting). Therefore, the integrand needs to be evaluated at the $10000$ points on the grid, and the $10000$ evaluations are done sequentially using a for loop. This can slow down the code.
-2. In each of the $10000$ loops in the numerical integration, `_compute_phi_s()` is called to compute the value of $\phi$ at the particular point on the grid. Each time `_compute_phi_s()` is called, the function computes two matrices that do not depend on $s$, but this is inefficient because these two matrices could be pre-computed and directly passed into all calls of `_compute_phi_s()`.
+1. In `_compute_sn()`, $S_n$ is calculated using numerical integration over a grid of intervals (our current simulation uses a grid of $10000$ points). Therefore, the integrand needs to be evaluated at each of the $10000$ points on the grid, and the $10000$ evaluations are done sequentially using a for loop. This can slow down the code.
+2. In each of the $10000$ loops in the numerical integration, `_compute_phi_s()` is called to compute the value of $\phi$ at the particular point on the grid. Each time `_compute_phi_s()` is called, the function computes two matrices that do not depend on $s$, so the same two matrices are recomputed in every of the $10000$ loops. This is inefficient because these two matrices could be pre-computed and directly passed into all calls of `_compute_phi_s()`.
 
 ### Solution implemented
 
-I address the problems by vectorization/array programming. Specifically, the points on the grid are divided into batches. The optimized implementation jointly computes the value of the integrand at all points in the batch, so the code only needs to loop over the batches rather than all of the $10000$ points. The code also pre-computes the two s-independent matrices, so it does not need to recompute the matrices for every batch.
+I address the problems by vectorization/array programming. Specifically, the points on the grid are divided into batches. The optimized implementation jointly computes the value of the integrand at all points in the batch together, so the code only needs to loop over the batches rather than all of the $10000$ points. The code also pre-computes the two s-independent matrices, so it does not need to recompute the matrices for every batch.
 
 ### Code comparison
 
@@ -219,11 +219,11 @@ Please note that after optimization, the `_compute_phi_s()` function is deleted 
 
 ### Performance impact
 
-As shown in `profiling/results/original/profiling_bottleneck_original.txt`, `_compute_sn()` for `GeneralizedTetradTestGMM` has a per-call runtime of $4.849$ seconds before optimization. After optimization, as shown in `profiling/results/optimized/profiling_bottleneck_optimized`, the per-call runtime is reduced to $1.721$ seconds after optimization.
+As shown in `profiling/results/original/profiling_bottleneck_original.txt`, `_compute_sn()` for `GeneralizedTetradTestGMM` has a per-call runtime of $4.867$ seconds before optimization. After optimization, as shown in `profiling/results/optimized/profiling_bottleneck_optimized`, the per-call runtime is reduced to $1.755$ seconds after optimization.
 
 ### Trade-offs
 
-Before optimization, since the integrand is evaluated at only one point in each loop, only quantities related to that one point need to be stored in memory at each time. However, after optimization, the code needs to store the quantities related to all points in the batch, which increases memory cost. The batching is implemented to reduce the memory burden. However, the memory requirement of the optimized code should also generally be higher than the original code despite batching.
+Before optimization, since the integrand is evaluated at only one point in each loop, only quantities related to that one point need to be stored in memory at each time. However, after optimization, the code needs to store the quantities related to all points in the batch, which increases memory cost. The batching is implemented to reduce the memory burden. However, the memory requirement of the optimized code should still generally be higher than the original code despite the batching.
 
 ## Optimization 2: Algorithmic improvement for delta matrix computation
 
@@ -233,7 +233,7 @@ As discussed in `BASELINE.md`, baseline profiling revealed that `_compute_delta_
 
 ### Solution implemented
 
-I address this problem by improving the algorithm used in delta matrix computation. In particular, notice that the delta matrix is mainly used to calculate a quadratic form in the form of $v^T \delta v$ with $v$ being some vector, and this quadratic form is needed to compute $MGT_n$. Therefore, the optimized code employs a new algorithm to compute the quadratic form. The new algorithm does not require constructing the full delta matrix, which allows it to reduce the computational complexity to $O(n\log(n))$.
+I address this problem by improving the algorithm used in delta matrix computation. In particular, notice that the delta matrix is mainly used to calculate a quadratic form in the form of $v^T \Delta v$ with $v$ being some vector, and this quadratic form is needed to compute $MGT_n$. Therefore, the optimized code employs a new algorithm to compute the quadratic form. The new algorithm does not require constructing the full delta matrix, which allows it to reduce the computational complexity to $O(n\log(n))$.
 
 More specifically, the original implementation explicitly constructs the delta matrix $\Delta\in\mathbb{R}^{n\times n}$, defined by
 
@@ -373,13 +373,13 @@ Code after optimization:
 ```python
 def _compute_delta_matmul(self, v):
     '''
-    Compute the matrix product of the delta matrix with some vector v, which is used in the computation of S_n.
+    Compute D @ v efficiently, where D[i, j] = abs(X[i] - X[j])
 
     Parameters:
-    v (np.ndarray): The vector to multiply with the delta matrix.
+    v (np.ndarray): The vector to multiply with the D matrix.
 
     Returns:
-    np.ndarray: The computed matrix product of the delta matrix with the vector v.
+    np.ndarray: The computed matrix product of the D matrix with the vector v.
     '''
 
     # Sort X while also storing the original unsorted ordering
@@ -459,19 +459,21 @@ def compute_test_statistic(self):
     return test_statistic
 ```
 
+Note that in `GeneralizedTetradTestPSMD`, the new, faster algorithm is applied only to the computation of $MGT_n$. The full delta matrix still needs to be constructed in some other parts of the method.
+
 ### Performance impact
 
-Before optimization, as shown in `profiling/results/original/profiling_bottleneck_original.txt`, `_compute_delta_matrix()` has a per-call runtime of $0.973$ seconds in `GeneralizedTetradTestGMM` and $0.402$ seconds in `GeneralizedTetradTestPSMD`. After optimization, as shown in `profiling/results/optimized/profiling_bottleneck_optimized`, the per-call runtime of `_compute_delta_matmul()` (which is the successor of `_compute_delta_matrix()`) is reduced to $0.000$ seconds in both classes. Please note that this is only a rough comparison because it does not factor into changes made to `_compute_mgtn()` and `compute_test_statistic()`.
+Before optimization, as shown in `profiling/results/original/profiling_bottleneck_original.txt`, `_compute_delta_matrix()` has a per-call runtime of $1.083$ seconds in `GeneralizedTetradTestGMM` and $0.526$ seconds in `GeneralizedTetradTestPSMD`. After optimization, as shown in `profiling/results/optimized/profiling_bottleneck_optimized`, the per-call runtime of `_compute_delta_matmul()` (which is the successor of `_compute_delta_matrix()`) is reduced to $0.000$ seconds in `GeneralizedTetradTestGMM` and $0.001$ seconds in `GeneralizedTetradTestPSMD`. Please note that this is only a rough comparison because it does not factor into changes made to `_compute_mgtn()` and `compute_test_statistic()` during optimization.
 
 ### Trade-offs
 
-The original implementation of `_compute_delta_matrix()` strictly follows the formula given in the original paper and is generally easy to follow. On the other hand, the optimized code might be difficult to understand without additional explanations.
+The original implementation of `_compute_delta_matrix()` strictly follows the formula given in the original paper and is generally easy to follow. On the other hand, the optimized code might be difficult to understand without additional explanations. This can also make the optimized code more challenging to maintain in the long term than the original code because the mathematics involved is more intricate and the learning curve for the maintainer is likely steeper.
 
 ## Optimization 3: Parallelizing the simulation replications
 
 ### Problem identified
 
-The original simulation involves running a large number of replicates sequentually. Although each individual replication does not take a lot of time, the combined runtime for sequentially executing all replications can be particularly high.
+The original simulation involves running a large number of replicates sequentially. Although each individual replication does not take a lot of time, the combined runtime for sequentially executing all replications can be particularly high.
 
 ### Solution implemented
 
@@ -548,9 +550,9 @@ def run_simulations(num_replications, num_samples_list, parameters_list, alpha, 
 Code after optimization:
 
 ```python
-def run_simulations(num_replications, num_samples_list, parameters_list, alpha, start_seed, raw_path=None, n_workers=4):
+def run_simulations_parallel(num_replications, num_samples_list, parameters_list, alpha, start_seed, raw_path=None, n_workers=4):
     """
-    Run multiple simulation replications.
+    Run multiple simulation replications in parallel using the optimized code.
 
     Parameters:
     num_replications (int): The number of simulation replications to run.
@@ -622,7 +624,9 @@ def run_simulations(num_replications, num_samples_list, parameters_list, alpha, 
 
 ### Performance impact
 
-`profiling/code/optimized/profiling_parallelization_optimized.py` provides code that compares the runtime of sequential vs. parallelized execution of the whole set of simulations in Project 2. The results are saved to `profiling/results/optimized/profiling_parallelization_optimized.txt`. [DICSUSS THE RESULTS!]
+`profiling/code/comparison/profiling_parallelization_comparison.py` provides code that compares the runtime of sequential vs. parallelized execution of the whole set of simulations in Project 2. Code with Optimizations 1 and 2 is used for both the sequential and parallelized executions. The results are saved to `profiling/results/comparison/profiling_parallelization_comparison.txt`. The sequential execution used a wall-clock time of about $3672$ seconds, while the parallelized execution only used about $1587$ seconds of wall-clock time. This shows parallelization results in a significant improvement in terms of runtime.
+
+*Note: The CPU time is also reported in `profiling/results/comparison/profiling_parallelization_comparison.txt` for completeness. However, the wall-clock time is used as the primary performance metric for evaluating parallelization because the reported CPU time for the parallel implementation only measures the main process and excludes worker-process CPU time (i.e. it underestimates the true total CPU time).*
 
 ### Trade-offs
 
@@ -636,19 +640,18 @@ The following visualization compares the original and optimized code in terms of
 
 ![](../profiling/results/comparison/runtime_vs_sample_size.png)
 
-The following visualization compares the original and optimized code in terms of the runtime (measured by wall-clock time) of a multiple simulation replication (using `run_simulations()`) against the sample size. We fix `alpha_2=0.1, beta_2=0.2, delta=0, num_samples=100, n_workers=4`, and vary the number of simulation replications. Notably, when running the multiple replications, the optimized code is faster than the original code for all of the replication counts tested, and the gap in the runtime widens as the sample size increases. Specifically, the runtime of the optimized code is remains nearly flat as the replication count increases, which is likely due to parallelization.
+The following visualization compares the original and optimized code in terms of the runtime (measured by wall-clock time) of a multiple simulation replication (using `run_simulations()`) against the replication count (i.e. the number of replications). We fix `alpha_2=0.1, beta_2=0.2, delta=0, num_samples=100, n_workers=4`, and vary the number of simulation replications. Notably, when running the multiple replications, the optimized code is faster than the original code for all of the replication counts tested, and the gap in the runtime widens as the replication count increases. Specifically, the runtime of the optimized code remains nearly flat as the replication count increases, which is likely due to parallelization.
 
 ![](../profiling/results/comparison/runtime_vs_replications.png)
 
 
 ## Lessons Learned
 
-For a single simulation replication, I think Optimization 1 provided the best return on investment. The idea behind Optimization 1 is relatively simple. Despite the simplicity, it speeds up each simulation replication by about 6 seconds (3 seconds per call, and 2 calls per simulation replication). 
+I think Optimization 1 provided the best return on investment. The idea behind Optimization 1 is relatively simple. Despite the simplicity, it speeds up each simulation replication by about 6 seconds (3 seconds per call, and 2 calls per simulation replication). 
 
-Indeed, I was initially surprised by how much time `_compute_phi_s()` consumes in total in the original code. I did not expect it to take up a lot of time because it is relatively simple and straightforward, and it belongs to a reasonable complexity class. However, it turned out that repetitive computation made this straightforward function a computational bottleneck.
+Indeed, I was initially surprised by how much time `_compute_phi_s()` consumes in total in the original code. I did not expect it to take up a lot of time because it is relatively simple and straightforward, and it belongs to a reasonable complexity class. However, it turned out that the repetitive computation made this straightforward function a computational bottleneck.
 
-For running the full simulation with multiple replications, I think Optimization 3 procided the best return on investment. Implementing parallelization is not very difficult. However, it provides significant runtime reduction when a large number of replications are run.
+I think Optimization 3 also provided the very great return on investment when the simulation involves running multiple independent simulation replications. Implementing parallelization is not very difficult. However, it provides significant runtime reduction when a large number of replications are run.
 
-I think all of the optimization I made are worth the effort. However, compared with the other two optimizations, I think Optimization 2 is relatively less worthwhile. Precisely, I would not say I regret implementing it. Indeed, it provided concret preformance improvements. The main consideration here is the trade-offs involved. The new algorithm for computing the quadratic form is fairly complicated and is specifically tailored to my setting. Therefore, it is relatively difficult to maintain in the long term: the maintainer might need to spend a long time to understand it, a random reader can find the algorithm unintuitive, and the algorithm might need to change if the generalized tetrad test method is updated. Meanwhile, the performance gain from this optimization does not seem to be as large as those from the other two optimizations.
-
+Optimization 2 also resulted in a very concrete speed-up of the code. However, I think it involves more significant trade-offs than the other two optimizations. The new algorithm for computing the quadratic form is relatively complicated. Therefore, it might be relatively difficult to maintain in the long term: the maintainer might need to spend a long time to understand it, a random reader can find the algorithm unintuitive, and the algorithm might need to change if the generalized tetrad test method is updated.
 

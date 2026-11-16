@@ -382,8 +382,6 @@ class GeneralizedTetradTestGMMOptimized(TetradTestOptimized):
             s_grid = np.linspace(0.001, 300, 10000)
 
         integrand = np.zeros(len(s_grid))
-        #exp_centered = exp_values - exp_values.mean(axis=1, keepdims=True)
-        #residual_times_exp_centered = residuals[None, :] * exp_centered
 
         # Calculate GMM moment functions
         D = np.column_stack([np.ones(self.N), proxy])
@@ -404,43 +402,21 @@ class GeneralizedTetradTestGMMOptimized(TetradTestOptimized):
         for start in range(0, len(s_grid), batch_size):
             end = min(start + batch_size, len(s_grid))
             s_batch = s_grid[start:end]
-
             exp_values = np.exp(
                 1j * s_batch[:, None] * self.X[None, :]
             )
-
             exp_centered = (
                 exp_values
                 - exp_values.mean(axis=1, keepdims=True)
             )
-
             residual_times_exp_centered = residuals[None, :] * exp_centered
-
             C = exp_values @ D_centered / self.N
             phi = C @ A
-
             terms = residual_times_exp_centered + phi
-
             integrand[start:end] = (
                 np.sum(np.abs(terms)**2, axis=1)
                 / s_batch**2
             )
-
-        '''for idx, s in enumerate(s_grid):
-            exp_values = np.exp(1j * s * self.X)
-
-            # Compute phi_hat_s(O_j; bridge) for all observations
-            phi_s = self._compute_phi_s(
-                s, bridge_function, bridge_function_type
-            )
-
-            # Compute the expression inside absolute value in Equation (12)
-            terms = (
-                residuals * (exp_values - exp_values.mean())
-                + phi_s
-            )
-
-            integrand[idx] = np.sum(np.abs(terms)**2) / s**2'''
 
         # Integrate over positive s and multiply by 2
         sn = (2 / (self.N * np.pi)) * np.trapezoid(

@@ -1,4 +1,4 @@
-'''Implement unit tests for the three tetrad tests.'''
+'''Implement unit tests for the optimized version of the three tetrad tests.'''
 
 import numpy as np
 from scipy.stats import chi2

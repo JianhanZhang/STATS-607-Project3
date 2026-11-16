@@ -1,3 +1,5 @@
+'''Check for signs of numerical instability in the optimized code.'''
+
 import warnings
 from pathlib import Path
 import numpy as np

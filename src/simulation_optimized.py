@@ -1,4 +1,4 @@
-'''Implement the main simulation driver.'''
+'''Implement the main simulation driver; optimized for speed and parallelization.'''
 
 import numpy as np
 import pandas as pd
@@ -13,7 +13,7 @@ from pathlib import Path
 
 def run_one_simulation(num_samples, alpha_2, beta_2, delta, seed):
     """
-    Run one simulation replication.
+    Run one simulation replication using the optimized code.
 
     Parameters:
     num_samples (int): The sample size.
@@ -50,7 +50,7 @@ def run_one_simulation(num_samples, alpha_2, beta_2, delta, seed):
 
 def run_simulations_sequential(num_replications, num_samples_list, parameters_list, alpha, start_seed, raw_path=None):
     """
-    Run multiple simulation replications sequentially (without paralllelization).
+    Run multiple simulation replications sequentially using the optimized code (without parallelization).
 
     Parameters:
     num_replications (int): The number of simulation replications to run.
@@ -112,7 +112,7 @@ def run_simulations_sequential(num_replications, num_samples_list, parameters_li
 
 def run_simulations_parallel(num_replications, num_samples_list, parameters_list, alpha, start_seed, raw_path=None, n_workers=4):
     """
-    Run multiple simulation replications in parallel.
+    Run multiple simulation replications in parallel using the optimized code.
 
     Parameters:
     num_replications (int): The number of simulation replications to run.

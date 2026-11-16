@@ -1,3 +1,5 @@
+'''Profile a typical single simulation run using the original code.'''
+
 from cProfile import Profile
 from pstats import Stats, SortKey
 from src.simulation import run_one_simulation, run_simulations

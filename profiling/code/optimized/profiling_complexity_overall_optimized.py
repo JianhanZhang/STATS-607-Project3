@@ -1,3 +1,4 @@
+'''Analyze the total runtime of a single simulation run against different sample sizes using the optimized code.'''
 
 import time
 from pathlib import Path
@@ -19,6 +20,22 @@ def analyze_complexity(
     start_seed=607,
     output_dir="profiling/results/optimized",
 ):
+    '''Analyze the empirical computational complexity of a single simulation run against different sample sizes using the optimized code.
+    Regress the log of the median runtime against the log of the sample size to estimate the complexity exponent.
+
+    Parameters:
+    sample_sizes: List of sample sizes to test.
+    num_replications: Number of times to replicate each simulation.
+    alpha_2: Parameter for the simulation.
+    beta_2: Parameter for the simulation.
+    delta: Parameter for the simulation.
+    start_seed: Starting seed for the replications.
+    output_dir: Directory to save results.
+
+    Returns:
+    summary: DataFrame summarizing the runtimes for each sample size.
+    regression: Result of the linear regression on the log-log scale.
+    '''
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 

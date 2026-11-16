@@ -1,4 +1,4 @@
-'''Implement the three methods: classical tetrad test, generalized tetrad test with GMM, and generalized tetrad test with PSMD.'''
+'''Implement the three methods: classical tetrad test, generalized tetrad test with GMM, and generalized tetrad test with PSMD; optimized for speed.'''
 
 from abc import ABC, abstractmethod
 from unittest import result

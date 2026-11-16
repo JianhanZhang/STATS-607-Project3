@@ -1,3 +1,5 @@
+'''Comparing the runtime of optimized code with parallelization to optimized code without parallelization.'''
+
 import time
 import numpy as np
 from src.simulation_optimized import run_simulations_sequential, run_simulations_parallel

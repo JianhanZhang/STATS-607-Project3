@@ -1,0 +1,7 @@
+Parallelized simulations
+Wall-clock time: 1586.7423 seconds
+CPU time:        1.0066 seconds
+
+Sequential simulations
+Wall-clock time: 3671.7397 seconds
+CPU time:        3663.8060 seconds

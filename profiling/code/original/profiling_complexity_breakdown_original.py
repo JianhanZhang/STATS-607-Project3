@@ -1,3 +1,5 @@
+'''Profile a typical single simulation run using the original code under different sample sizes.'''
+
 import csv
 import time
 from pathlib import Path

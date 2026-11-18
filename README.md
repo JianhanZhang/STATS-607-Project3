@@ -83,11 +83,13 @@ makes the visualizations together. It generates all of the files mentioned above
 make all
 ```
 
-(Optionally) the following command removes previously generated result files and visualizations
+(Optionally) the following command removes previously generated simulation result files and visualizations
 
 ```bash
 make clean
 ```
+
+Please note that this clears all the simulation result files in the `results` folder, but it does not remove the profiling result files in the `profiling/results` folder.
 
 ## Profiling the Code
 
@@ -157,6 +159,14 @@ Running the above command should generate the following files:
 - `profiling/results/original/stability_summary_original.csv`
 - `profiling/results/optimized/stability_detailed_optimized.csv`
 - `profiling/results/optimized/stability_summary_optimized.csv`
+
+(Optionally) the following command removes previously generated profiling result files and visualizations
+
+```bash
+make clean-profile
+```
+
+Please note that this clears all the profiling result files in the `profiling/results` folder, but it does not remove the simulation result files in the `results` folder.
 
 ## Estimated Runtime
 

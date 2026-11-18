@@ -170,10 +170,10 @@ Under relatively large samples, across the settings tested in the simulation, th
 
 Generative AI is involved in the workflow of this project. Its main contributions include:
 
-1. I used AI to help me understand the technical details of the paper, remind me of useful Python syntax and packages, and debug my code.
-2. I used AI to write the `GeneralizedTetradTestPSMD` class because I am not yet very familiar with PSMD.
-3. I discussed with AI the implementation of some nuanced technical components of `ClassicalTetradTest` and `GeneralizedTetradTestGMM`, such as the implementation of $S_n$ in the generalized tetrad test statistic. I checked the code to make sure that it properly reproduces the original paper.
-4. AI helped draft the plotting functions and raw result aggregation functions with general ideas supplied by me. I then modified the draft code to make sure that they are correct and that their outputs are readable and include all the needed components.
+1. I used AI to remind me of useful Python syntax and packages and debug my code.
+2. The algorithmic improvements implemented in Optimization 2 was initially proposed by AI. I checked the correctness of the idea and adapted the idea to fit my current code structure.
+3. I discussed with AI the implementation of some nuanced technical details of the optimizations. I checked the suggested implementations.
+4. AI helped with the code for plotting and for summarizing and saving profiling results; general ideas regarding what to profile and what to plot are supplied by me. I checked AI's suggestions. 
 5. AI helped with creating some docstrings. Where AI assistance is used, I read and modified the corresponding docstrings to make sure that the descriptions are clear and accurate.
 
 ## References
